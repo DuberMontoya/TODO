@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Valentina — Un regalo especial</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Figtree:ital,wght@0,400;0,500;0,600;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="atmosphere" aria-hidden="true">
+      <div class="mist mist-a"></div>
+      <div class="mist mist-b"></div>
+      <canvas id="sparkles"></canvas>
+    </div>
+
+    <!-- HERO -->
+    <header class="hero" id="inicio">
+      <div class="hero__veil"></div>
+      <div class="hero__content">
+        <p class="brand" data-bind="brand">Valentina</p>
+        <h1 class="hero__title" data-bind="heroLine">
+          Hoy el cielo guarda un secreto con tu nombre
+        </h1>
+        <p class="hero__sub" data-bind="tagline">
+          Un jardín de momentos solo para ti
+        </p>
+        <button type="button" class="cta" id="openGift" data-bind="cta">
+          Abrir el regalo
+        </button>
+      </div>
+    </header>
+
+    <main id="journey" class="journey" hidden>
+      <section class="dedication reveal">
+        <p class="eyebrow" id="occasionLabel"></p>
+        <h2 class="section-title">
+          Para <span data-bind="recipient">Valentina</span>
+        </h2>
+        <p class="section-lead">
+          De <span data-bind="sender">Duber</span> ·
+          <span data-bind="dateLabel">23 de octubre</span>
+        </p>
+      </section>
+
+      <section class="chapters" id="chapters" aria-label="Capítulos"></section>
+
+      <section class="gallery reveal" aria-label="Recuerdos">
+        <h2 class="section-title">Ventanas al recuerdo</h2>
+        <p class="section-lead">Desliza y deja que cada imagen cuente su parte.</p>
+        <div class="gallery__stage">
+          <button
+            type="button"
+            class="gallery__nav gallery__nav--prev"
+            id="photoPrev"
+            aria-label="Foto anterior"
+          >
+            ‹
+          </button>
+          <figure class="gallery__frame">
+            <img id="photoImg" src="" alt="" />
+            <figcaption id="photoCaption"></figcaption>
+          </figure>
+          <button
+            type="button"
+            class="gallery__nav gallery__nav--next"
+            id="photoNext"
+            aria-label="Foto siguiente"
+          >
+            ›
+          </button>
+        </div>
+        <div class="gallery__dots" id="photoDots" role="tablist"></div>
+      </section>
+
+      <section class="notes reveal" aria-label="Mensajes">
+        <h2 class="section-title">Mensajes guardados</h2>
+        <p class="section-lead">Toca cada nota para revelarla.</p>
+        <div class="notes__list" id="notesList"></div>
+      </section>
+
+      <section class="finale reveal" id="finale">
+        <h2 class="section-title" data-bind="finale.title"></h2>
+        <p class="finale__body" data-bind="finale.body"></p>
+        <p class="finale__sign" data-bind="finale.signoff"></p>
+        <p class="finale__sign finale__sign--love" data-bind="finale.signoff2"></p>
+        <button type="button" class="cta cta--ghost" id="replay">
+          Volver al inicio
+        </button>
+      </section>
+    </main>
+
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
